@@ -25,10 +25,10 @@ jobs:
 
       - name: Define variables
         run: |
-          echo ::set-env name=PROJECT::$(echo "golang-github-action")
-          echo ::set-env name=VERSION::$(git describe --tags)
-          echo ::set-env name=COMMIT::$(git rev-parse HEAD)
-          echo ::set-env name=BUILDTIME::$(date +%FT%T%z)
+          echo name=PROJECT::$(echo "golang-github-action")
+          echo name=VERSION::$(git describe --tags)
+          echo name=COMMIT::$(git rev-parse HEAD)
+          echo name=BUILDTIME::$(date +%FT%T%z)
 
       - name: Login to docker hub
         uses: actions-hub/docker/login@master
