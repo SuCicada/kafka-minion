@@ -37,7 +37,7 @@ jobs:
           DOCKER_PASSWORD: ${{ secrets.DOCKER_PASSWORD }}
 
       - name: docker build
-        run: docker build --build-arg VERSION=${VERSION} --build-arg COMMIT=${COMMIT} --build-arg BUILDTIME=${BUILDTIME} -t ${DOCKER_USERNAME}/${PROJECT}:${IMAGE_TAG} .
+        run: make image
         env:
           DOCKER_USERNAME: ${{ secrets.DOCKER_USERNAME }}
 
