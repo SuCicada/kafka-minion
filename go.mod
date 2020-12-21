@@ -11,6 +11,7 @@ require (
 	github.com/xdg/scram v0.0.0-20180814205039-7eeb5667e42c
 	golang.org/x/crypto v0.0.0-20200820211705-5c72a883971a // indirect
 	golang.org/x/net v0.0.0-20200925080053-05aa5d4ee321 // indirect
+	gopkg.in/yaml.v2 v2.2.8 // indirect
 )
 
 go 1.15
