@@ -41,6 +41,5 @@ jobs:
           tags: ${DOCKER_USERNAME}/${PROJECT}:latest
           secrets: |
             GIT_AUTH_TOKEN=${{ secrets.GIT_AUTH_TOKEN }}
-        env:
           DOCKER_USERNAME: ${{ secrets.DOCKERHUB_USERNAME }}
           PROJECT: kafka-minion
