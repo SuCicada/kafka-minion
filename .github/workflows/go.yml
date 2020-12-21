@@ -38,8 +38,6 @@ jobs:
         uses: docker/build-push-action@v2
         with:
           push: true
-          tags: ${DOCKER_USERNAME}/${PROJECT}:latest
+          tags: ${{ secrets.DOCKERHUB_USERNAME }}/kafka-minion:latest
           secrets: |
             GIT_AUTH_TOKEN=${{ secrets.GIT_AUTH_TOKEN }}
-          DOCKER_USERNAME: ${{ secrets.DOCKERHUB_USERNAME }}
-          PROJECT: kafka-minion
