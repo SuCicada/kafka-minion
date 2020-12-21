@@ -25,7 +25,7 @@ jobs:
 
       - name: Define variables
         run: |
-          echo name=PROJECT::$(echo "golang-github-action")
+          echo name=PROJECT::$(echo "{{ github.repository }}")
           echo name=VERSION::$(git describe --tags)
           echo name=COMMIT::$(git rev-parse HEAD)
           echo name=BUILDTIME::$(date +%FT%T%z)
@@ -47,3 +47,4 @@ jobs:
           args: push ${DOCKER_USERNAME}/${PROJECT}:${IMAGE_TAG}
         env:
           DOCKER_USERNAME: ${{ secrets.DOCKER_USERNAME }}
+          PROJECT: ${{ github.repository }}
